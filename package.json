@@ -1,5 +1,7 @@
 {
   "name": "soccer_player_spikes",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "bootstrap-material-design": "^4.1.2"
+  }
 }
