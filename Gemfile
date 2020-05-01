@@ -10,9 +10,11 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'bootsnap', '>= 1.1.0', require: false
-# slim
+
 gem 'slim-rails'
 gem 'html2slim'
+gem 'font-awesome-sass'
+gem 'jquery-rails'
 
 # gem 'mini_racer', platforms: :ruby
 # gem 'jbuilder', '~> 2.5'
