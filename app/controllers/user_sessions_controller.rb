@@ -6,7 +6,7 @@ class UserSessionsController < ApplicationController
   def create
     @user = login(params[:email], params[:password])
     if @user
-      redirect_back_or_to(boards_url, success: t('.flash.login'))
+      redirect_back_or_to(root_url, success: t('.flash.login'))
     else
       flash.now[:danger] = t('.flash.login_failure')
       render :new
