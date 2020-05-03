@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_01_073512) do
+ActiveRecord::Schema.define(version: 2020_05_02_071905) do
+
+  create_table "authentications", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "provider", null: false
+    t.string "uid", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["provider", "uid"], name: "index_authentications_on_provider_and_uid"
+    t.index ["user_id"], name: "index_authentications_on_user_id"
+  end
 
   create_table "players", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -23,8 +33,8 @@ ActiveRecord::Schema.define(version: 2020_05_01_073512) do
     t.string "email", null: false
     t.string "crypted_password"
     t.string "salt"
-    t.string "twiiter_name", null: false
-    t.string "twitter_image"
+    t.string "screen_name", null: false
+    t.string "profile_image_url"
     t.integer "role", default: 0, null: false
     t.integer "notification", default: 0, null: false
     t.datetime "created_at", null: false
