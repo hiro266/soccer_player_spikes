@@ -1,7 +1,7 @@
 class SorceryCore < ActiveRecord::Migration[5.2]
   def change
     create_table :users do |t|
-      t.integer :twitter_id, null: false, unique: true
+      t.string :twitter_id, null: false, unique: true
       t.string :email, unique: true
       t.string :crypted_password
       t.string :salt

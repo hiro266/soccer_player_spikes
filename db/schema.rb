@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 2020_05_02_071905) do
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "twitter_id", null: false
+    t.string "twitter_id", null: false
     t.string "email"
     t.string "crypted_password"
     t.string "salt"
