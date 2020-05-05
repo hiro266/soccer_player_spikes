@@ -15,6 +15,8 @@ gem 'slim-rails'
 gem 'html2slim'
 gem 'font-awesome-sass'
 gem 'jquery-rails'
+gem 'sorcery'
+gem 'config'
 
 # gem 'mini_racer', platforms: :ruby
 # gem 'jbuilder', '~> 2.5'
