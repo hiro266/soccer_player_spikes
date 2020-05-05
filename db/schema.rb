@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 2020_05_02_071905) do
     t.integer "notification", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["twitter_id"], name: "index_users_on_twitter_id", unique: true
   end
 
 end
