@@ -22,6 +22,26 @@ module SoccerPlayerSpikes
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
 
+    # rails gコマンド使用時に余計なファイルを生成させない
+    config.generators do |g|
+      g.assets false
+      g.skip_routes false
+      g.test_framework :rspec,    # RSpecを使用
+        controller_specs: false,  # controller specは作らない
+        view_specs: false,        # view specは作らない
+        helper_specs: false,      # helper specは作らない
+        routing_specs: false      # routing specは作らない
+    end
+
+    # 日本語化
+    config.i18n.default_locale = :ja # デフォルト言語を日本語に設定
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s] # i18n翻訳ファイル(ja.yml等)をlocales以下に配置することで読み込むことができるように設定
+
+    # rails時刻設定
+    config.time_zone = 'Asia/Tokyo'
+    # db時刻設定
+    config.active_record.default_timezone = :local
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
