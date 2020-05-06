@@ -1,13 +1,3 @@
-# FactoryBot.define do
-#   factory :user do
-#     screen_name { "MyString" }
-#     twitter_email { "MyString" }
-#     twitter_image { "MyString" }
-#     role { 1 }
-#     notification { 1 }
-#   end
-# end
-
 FactoryBot.define do
   factory :user do
     sequence(:twitter_id) { |n| n }

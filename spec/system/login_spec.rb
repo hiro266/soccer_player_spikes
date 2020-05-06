@@ -10,7 +10,7 @@ RSpec.describe 'Login', type: :system do
       expect(page).to have_content('ツイッターログイン'), '「ツイッターログイン」というテキストを持ったボタンが存在しません'
     end
 
-    fit 'ゲストログインできること' do
+    it 'ゲストログインできること' do
       expect(current_path).to eq root_path
       expect(page).to have_content('ゲストユーザーでログインしました'), '「ゲストユーザーでログインしました」というメッセージが存在しません'
     end
