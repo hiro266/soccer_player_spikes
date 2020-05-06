@@ -64,9 +64,9 @@ jobs:
       - run: bundle exec rails db:create
       - run: bundle exec rails db:schema:load
 
-      - run:
-          name: Rubocop
-          command: bundle exec rubocop
+      # - run:
+      #     name: Rubocop
+      #     command: bundle exec rubocop
 
       - run:
           name: run rspec
