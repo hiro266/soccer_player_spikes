@@ -30,7 +30,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 
   # rubocop
-  gem 'rubocop'
+  gem 'rubocop', require: false
   gem 'rails_best_practices'
 
   #error
