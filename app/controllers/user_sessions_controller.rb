@@ -11,6 +11,6 @@ class UserSessionsController < ApplicationController
   def guest_login
     guest_user = User.find_by!(role: 'guest')
     auto_login(guest_user)
-    redirect_to root_path, notice: 'ログインしました'
+    redirect_to root_path, success: "ゲストユーザーで#{t('.flash.login')}"
   end
 end
