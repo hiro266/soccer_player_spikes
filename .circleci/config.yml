@@ -8,7 +8,7 @@ jobs:
     docker:
       - image: circleci/ruby:2.6.6-node-browsers-legacy
         environment:
-        DB_HOST: 127.0.0.1
+          DB_HOST: 127.0.0.1
           RAILS_ENV: test
           BUNDLER_VERSION: 2.1.4
       - image: circleci/mysql:5.7
@@ -84,3 +84,4 @@ jobs:
       - store_artifacts:
           path: tmp/screenshots
           destination: test-screenshots
+          
