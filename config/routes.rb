@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   root 'players#index'
   resources :users, only: %i[edit update]
+  namespace :admin do
+    root 'dashboards#index'
+  end
   get    '/login', to: 'user_sessions#new'
   delete '/logout',  to: 'user_sessions#destroy'
   # ゲストユーザーログイン

@@ -18,6 +18,7 @@ gem 'jquery-rails'
 gem 'sorcery'
 gem 'config'
 gem 'rails-i18n', '~> 5.1'
+gem 'active_link_to'
 
 # gem 'mini_racer', platforms: :ruby
 # gem 'jbuilder', '~> 2.5'

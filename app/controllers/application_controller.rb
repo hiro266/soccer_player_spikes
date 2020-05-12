@@ -4,9 +4,9 @@ class ApplicationController < ActionController::Base
 
   protect_from_forgery with: :exception
 
-  protected
+  private
 
   def not_authenticated
-    redirect_to login_url, danger: t('.flash.please_login')
+    redirect_to login_url, danger: 'ログインしてください'
   end
 end
