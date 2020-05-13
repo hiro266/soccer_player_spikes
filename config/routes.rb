@@ -12,4 +12,6 @@ Rails.application.routes.draw do
   get 'oauth/callback', to: 'oauths#callback'
   post 'oauth/callback', to: 'oauths#callback'
   get 'oauth/:provider', to: 'oauths#oauth', as: :auth_at_provider
+  # テスト用管理ユーザーログイン
+  get 'admin_login', to: 'user_sessions#admin_login' if Rails.env.test?
 end
