@@ -12,3 +12,6 @@ ja:
           general: 一般
           admin: 管理者
           guest: ゲスト
+        notification:
+          notification_off: なし
+          notification_on: あり
