@@ -115,7 +115,7 @@ Rails.application.config.sorcery.configure do |config|
     twitter_id: 'id', # ユニーク管理するため
     email: 'email',
     screen_name: 'screen_name',
-    profile_image_url: 'profile_image_url_https'
+    remote_avatar_url: 'profile_image_url_https'
   }
   #
   # config.facebook.key = ""
