@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   authenticates_with_sorcery!
+  include Common_Processing
   mount_uploader :avatar, AvatarUploader
 
   has_many :authentications, dependent: :destroy

@@ -1,0 +1,11 @@
+= search_form_for q, url: url do |f|
+  .row
+    .form-inline.align-items-center.mx-auto
+      .col-auto
+        = f.search_field :screen_name_cont, class: "form-control", placeholder: '検索ワード'
+      .col-auto
+        = f.select :role_eq, User.roles.map { |k, v| [I18n.t("enums.user.role.#{k}"), v] }, { include_blank: '権限別' }, {class:"form-control"}
+      .col-auto
+        = f.select :notification_eq, User.notifications.map { |k, v| [I18n.t("enums.user.notification.#{k}"), v] }, { include_blank: '通知設定' }, {class:"form-control"}
+      .col-auto
+        = f.submit "検索", class: "btn btn-primary"

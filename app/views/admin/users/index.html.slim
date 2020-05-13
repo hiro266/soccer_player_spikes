@@ -1,0 +1,31 @@
+.container.mb-5.pt-2
+  h1
+    | ユーザー一覧
+  .row
+    .col-md-12.mb-3
+      = render 'search_form', url: admin_users_path, q: @q
+  .row
+    .col-md-12
+      table.table.table-striped
+        thead
+          tr
+            th[scope="col"]
+              = User.human_attribute_name('id')
+            th[scope="col"]
+              = User.human_attribute_name('avatar')
+            th[scope="col"]
+              = User.human_attribute_name('screen_name')
+            th[scope="col"]
+              = User.human_attribute_name('email')
+            th[scope="col"]
+              = User.human_attribute_name('notification')
+            th[scope="col"]
+              = User.human_attribute_name('role')
+            th[scope="col"]
+              = User.human_attribute_name('create_at')
+            th[scope="col"]
+        tbody
+          = render @users
+  / .row
+  /   .col-md-12
+  /     = paginate @users
