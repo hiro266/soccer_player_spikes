@@ -22,6 +22,7 @@ gem 'active_link_to'
 gem 'ransack'
 gem 'kaminari'
 gem 'enum_help'
+gem 'carrierwave'
 
 # gem 'mini_racer', platforms: :ruby
 # gem 'jbuilder', '~> 2.5'
