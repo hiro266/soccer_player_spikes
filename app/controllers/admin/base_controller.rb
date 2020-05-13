@@ -7,4 +7,11 @@ class Admin::BaseController < ApplicationController
              layout: false, status: 404
     end
   end
+
+  private
+
+    def not_authenticated
+      render file: "#{Rails.root}/public/404.html",
+            layout: false, status: 404
+    end
 end
