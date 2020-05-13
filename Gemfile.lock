@@ -126,6 +126,8 @@ GEM
       dry-equalizer (~> 0.2)
       dry-initializer (~> 3.0)
       dry-schema (~> 1.5)
+    enum_help (0.0.17)
+      activesupport (>= 3.0.0)
     erubi (1.9.0)
     erubis (2.7.0)
     execjs (2.7.0)
@@ -365,6 +367,7 @@ DEPENDENCIES
   capybara
   coffee-rails (~> 4.2)
   config
+  enum_help
   factory_bot_rails
   font-awesome-sass
   html2slim
