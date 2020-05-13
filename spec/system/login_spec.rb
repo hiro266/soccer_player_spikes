@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Login', type: :system do
+RSpec.describe 'SystemLogin', type: :system do
   let(:guest_user) { create(:user, :guest) }
   before { login(guest_user) }
   describe 'ログインページ' do
@@ -14,5 +14,8 @@ RSpec.describe 'Login', type: :system do
       expect(current_path).to eq root_path
       expect(page).to have_content('ゲストユーザーでログインしました'), '「ゲストユーザーでログインしました」というメッセージが存在しません'
     end
+
+    # it 'ツイッターログインできること' do
+    # end
   end
 end
