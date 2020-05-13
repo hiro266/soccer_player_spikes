@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe User, type: :model do
+RSpec.describe "Model#{User}", type: :model do
   describe '正常にユーザー登録できるか' do
     it 'Twitterからユーザー登録' do
       user = build(:user, :twitter)
