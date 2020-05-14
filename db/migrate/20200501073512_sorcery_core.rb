@@ -6,7 +6,7 @@ class SorceryCore < ActiveRecord::Migration[5.2]
       t.string :crypted_password
       t.string :salt
       t.string :screen_name, null: false
-      t.string :profile_image_url
+      t.string :avatar
       t.integer :role, null: false, default: 0
       t.integer :notification, null: false, default: 0
 

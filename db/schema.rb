@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2020_05_02_071905) do
     t.string "crypted_password"
     t.string "salt"
     t.string "screen_name", null: false
-    t.string "profile_image_url"
+    t.string "avatar"
     t.integer "role", default: 0, null: false
     t.integer "notification", default: 0, null: false
     t.datetime "created_at", null: false

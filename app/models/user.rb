@@ -1,5 +1,7 @@
 class User < ApplicationRecord
   authenticates_with_sorcery!
+  include Common_Processing
+  mount_uploader :avatar, AvatarUploader
 
   has_many :authentications, dependent: :destroy
   accepts_nested_attributes_for :authentications # has_many :authenticationsより下に書く
