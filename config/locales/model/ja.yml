@@ -3,6 +3,7 @@ ja:
     models:
       user: ユーザー
       player: 選手
+      spike: スパイク
     attributes:
       user:
         id: ID
@@ -15,6 +16,14 @@ ja:
       player:
         name: 名前
         image: 画像
+      spike:
+        maker: メーカー
+        name: 商品名
+        price: 価格
+        color: 色
+        slogan: スローガン
+        characteristic: 商品説明
+        images: 画像
   helpers:
     select:
       prompt: 選択してください
