@@ -18,7 +18,7 @@
             th[scope="row"]
               | アバター
             td
-              = link_to image_tag(@user.avatar.to_s, class: 'rounded-circle mr15', width: '40', height: '40'), class: 'nav-link', id: 'header-profile'
+              = image_tag @user.avatar.to_s, class: 'rounded-circle mr15', width: '40', height: '40', id: 'header-profile'
           tr
             th[scope="row"]
               | ユーザーネーム

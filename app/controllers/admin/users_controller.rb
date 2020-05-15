@@ -13,16 +13,16 @@ class Admin::UsersController < Admin::BaseController
 
   def update
     if @user.update(user_params)
-      redirect_to admin_user_url(@user), success: 'ユーザーを更新しました'
+      redirect_to admin_user_url(@user), success: t('.flash.update')
     else
-      flash.now[:danger] = 'ユーザーを更新できませんでした'
+      flash.now[:danger] = t('.flash.not_update')
       render :edit
     end
   end
 
   def destroy
     @user.destroy!
-    redirect_to admin_users_url, success: 'ユーザーを削除しました'
+    redirect_to admin_users_url, success: t('.flash.destroy')
   end
 
   private
