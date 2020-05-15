@@ -3,3 +3,16 @@ ja:
     flash:
       login: ログインしました
       logout: ログアウトしました
+  admin:
+    users:
+      flash:
+        update: ユーザーを更新しました
+        not_update: ユーザーを更新できませんでした
+        destroy: ユーザーを削除しました
+    spikes:
+      flash:
+        create: スパイクを新規登録しました
+        not_create: スパイクの新規登録に失敗しました
+        update: スパイク情報を更新しました
+        not_update: スパイク情報を更新できませんでした
+        destroy: スパイクを削除しました

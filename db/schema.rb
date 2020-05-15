@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_02_071905) do
+ActiveRecord::Schema.define(version: 2020_05_14_171721) do
 
   create_table "authentications", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -25,6 +25,20 @@ ActiveRecord::Schema.define(version: 2020_05_02_071905) do
   create_table "players", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "image", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "spike_id", null: false
+    t.index ["spike_id"], name: "index_players_on_spike_id"
+  end
+
+  create_table "spikes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "maker", null: false
+    t.string "name", null: false
+    t.integer "price", null: false
+    t.string "color", null: false
+    t.text "slogan", null: false
+    t.text "characteristic", null: false
+    t.string "images", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -43,4 +57,5 @@ ActiveRecord::Schema.define(version: 2020_05_02_071905) do
     t.index ["twitter_id"], name: "index_users_on_twitter_id", unique: true
   end
 
+  add_foreign_key "players", "spikes"
 end
