@@ -1,0 +1,14 @@
+tr
+  td
+    = player.id
+  td
+    = link_to admin_player_path(player) do
+      = player.name
+  td
+    = image_tag player.image.to_s, class: 'rounded-circle mr15', width: '40', height: '40', id: 'header-profile'
+  td
+    = l player.created_at, format: :long
+  td
+    = link_to '編集', edit_admin_player_path(player), class: 'btn btn-success'
+    = link_to '削除', admin_player_path(player), class: 'btn btn-danger ml-3',
+      method: :delete, data: { confirm: '削除してよろしいですか？' }

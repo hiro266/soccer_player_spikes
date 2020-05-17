@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   namespace :admin do
     root 'dashboards#index'
     resources :users, only: %i{index show edit update destroy}
-    resources :users, only: %i{index show edit update destroy}
     resources :spikes
+    resources :players
   end
   get    '/login', to: 'user_sessions#new'
   delete '/logout',  to: 'user_sessions#destroy'
