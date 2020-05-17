@@ -1,4 +1,4 @@
-class Admin::SpikesController < ApplicationController
+class Admin::SpikesController < Admin::BaseController
   before_action :set_spike, only: %i[edit update destroy show]
   layout 'admin'
 

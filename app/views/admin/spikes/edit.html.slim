@@ -12,7 +12,7 @@
           = f.label :images
           = f.file_field :images, multiple: true, class: 'form-control'
           - @spike.images.each do |image|
-                = image_tag image.url, size: '100x100', class: 'image-thumbnail'
+            = image_tag image.url, size: '100x100', class: 'image-thumbnail'
         .form-group
           = f.label :ground
           = f.text_field :ground, value: @ground_tags, class: 'form-control'

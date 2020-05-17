@@ -9,10 +9,17 @@ ja:
         update: ユーザーを更新しました
         not_update: ユーザーを更新できませんでした
         destroy: ユーザーを削除しました
+    players:
+      flash:
+        create: プレイヤーを新規登録しました
+        not_create: プレイヤーの新規登録に失敗しました
+        update: プレイヤーを更新しました
+        not_update: プレイヤーの更新に失敗しました
+        destroy: プレイヤーを削除しました
     spikes:
       flash:
         create: スパイクを新規登録しました
         not_create: スパイクの新規登録に失敗しました
         update: スパイク情報を更新しました
-        not_update: スパイク情報を更新できませんでした
+        not_update: スパイク情報の更新に失敗しました
         destroy: スパイクを削除しました
