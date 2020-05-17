@@ -1,9 +1,9 @@
 class Spike < ApplicationRecord
   include Common_Processing
+  mount_uploaders :images, SpikeImageUploader
   has_many :players, dependent: :destroy
   has_many :spike_ground_tags, dependent: :destroy
   has_many :ground_tags, through: :spike_ground_tags
-  mount_uploaders :images, SpikeImageUploader
   # データの送受信のタイミングでjson ⇄ stringへ変換？
   serialize :images, JSON
 
