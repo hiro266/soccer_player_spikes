@@ -1,5 +1,7 @@
 class Admin::PlayersController < Admin::BaseController
   before_action :set_player, only: %i[edit update destroy show]
+  before_action :set_spike_all, only: %i[new edit]
+  before_action :set_spike, only: %i[edit show]
   layout 'admin'
 
   def index
@@ -9,7 +11,6 @@ class Admin::PlayersController < Admin::BaseController
 
   def new
     @player = Player.new
-    @spikes = Spike.all
   end
 
   def create
@@ -22,10 +23,7 @@ class Admin::PlayersController < Admin::BaseController
     end
   end
 
-  def edit
-    @spikes = Spike.all
-    @spike = Spike.find(@player.spike.id)
-  end
+  def edit; end
 
   def update
     if @player.update(player_params)
@@ -41,14 +39,20 @@ class Admin::PlayersController < Admin::BaseController
     redirect_to admin_players_url, success: t('.flash.destroy')
   end
 
-  def show
-    @spike = Spike.find(@player.spike.id)
-  end
+  def show; end
 
   private
 
     def set_player
       @player = Player.find(params[:id])
+    end
+
+    def set_spike_all
+      @spikes = Spike.all
+    end
+
+    def set_spike
+      @spike = Spike.find(@player.spike.id)
     end
 
     def player_params
