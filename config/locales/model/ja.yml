@@ -24,6 +24,9 @@ ja:
         slogan: スローガン
         characteristic: 商品説明
         images: 画像
+        create_at: 作成日時
+      ground_tag:
+        ground_tag: 適正グラウンド
   helpers:
     select:
       prompt: 選択してください

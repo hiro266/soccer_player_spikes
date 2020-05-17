@@ -9,6 +9,10 @@ tr
     = link_to admin_spike_path(spike) do
       = spike.name
   td
+    - spike.ground_tags.each do |t|
+      .card-text.mr-1.badge.badge-info
+        = t.ground
+  td
     = l spike.created_at, format: :long
   td
     = link_to '編集', edit_admin_spike_path(spike), class: 'btn btn-success'

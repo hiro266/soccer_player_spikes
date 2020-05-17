@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_14_171721) do
+ActiveRecord::Schema.define(version: 2020_05_15_082406) do
 
   create_table "authentications", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -22,6 +22,13 @@ ActiveRecord::Schema.define(version: 2020_05_14_171721) do
     t.index ["user_id"], name: "index_authentications_on_user_id"
   end
 
+  create_table "ground_tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "ground"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["ground"], name: "index_ground_tags_on_ground", unique: true
+  end
+
   create_table "players", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "image", null: false
@@ -29,6 +36,15 @@ ActiveRecord::Schema.define(version: 2020_05_14_171721) do
     t.datetime "updated_at", null: false
     t.bigint "spike_id", null: false
     t.index ["spike_id"], name: "index_players_on_spike_id"
+  end
+
+  create_table "spike_ground_tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "spike_id", null: false
+    t.bigint "ground_tag_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["ground_tag_id"], name: "index_spike_ground_tags_on_ground_tag_id"
+    t.index ["spike_id"], name: "index_spike_ground_tags_on_spike_id"
   end
 
   create_table "spikes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -58,4 +74,6 @@ ActiveRecord::Schema.define(version: 2020_05_14_171721) do
   end
 
   add_foreign_key "players", "spikes"
+  add_foreign_key "spike_ground_tags", "ground_tags"
+  add_foreign_key "spike_ground_tags", "spikes"
 end

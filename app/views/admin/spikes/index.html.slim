@@ -18,7 +18,9 @@
             th[scope="col"]
               = Spike.human_attribute_name('name')
             th[scope="col"]
-              = User.human_attribute_name('create_at')
+              = GroundTag.human_attribute_name('ground_tag')
+            th[scope="col"]
+              = Spike.human_attribute_name('create_at')
             th[scope="col"]
         tbody
           = render @spikes
