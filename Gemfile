@@ -14,6 +14,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'slim-rails'
 gem 'html2slim'
 gem 'font-awesome-sass'
+gem 'material_icons'
 gem 'jquery-rails'
 gem 'sorcery'
 gem 'config'
@@ -43,6 +44,7 @@ group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'pry-byebug'
+  gem 'pry-rails'
 
   #test
   gem 'rspec-rails'

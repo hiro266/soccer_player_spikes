@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  add_flash_types :danger, :success, :warning
+  add_flash_types :danger, :success, :warning, :info
   before_action :require_login
 
   protect_from_forgery with: :exception

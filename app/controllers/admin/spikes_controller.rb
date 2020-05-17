@@ -13,7 +13,9 @@ class Admin::SpikesController < ApplicationController
 
   def create
     @spike = Spike.new(spike_params)
+    @ground_tags = params[:spike][:ground]
     if @spike.save
+      @spike.save_tags_for_spike(@ground_tags)
       redirect_to admin_spikes_url, success: t('.flash.create')
     else
       flash.now[:danger] = t('.flash.not_create')
@@ -21,10 +23,14 @@ class Admin::SpikesController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+    @ground_tags = @spike.ground_tags.pluck(:ground).join(',')
+  end
 
   def update
+    @ground_tags = params[:spike][:ground]
     if @spike.update(spike_params)
+      @spike.save_tags_for_spike(@ground_tags)
       redirect_to admin_spike_url(@spike), success: t('.flash.update')
     else
       flash.now[:danger] = t('.flash.not_update')
