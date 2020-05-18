@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_18_060845) do
+ActiveRecord::Schema.define(version: 2020_05_18_093746) do
 
   create_table "authentications", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -22,11 +22,27 @@ ActiveRecord::Schema.define(version: 2020_05_18_060845) do
     t.index ["user_id"], name: "index_authentications_on_user_id"
   end
 
+  create_table "genre_tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "genre"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["genre"], name: "index_genre_tags_on_genre", unique: true
+  end
+
   create_table "ground_tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "ground"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["ground"], name: "index_ground_tags_on_ground", unique: true
+  end
+
+  create_table "player_genre_tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "player_id", null: false
+    t.bigint "genre_tag_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["genre_tag_id"], name: "index_player_genre_tags_on_genre_tag_id"
+    t.index ["player_id"], name: "index_player_genre_tags_on_player_id"
   end
 
   create_table "player_position_tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -36,6 +52,15 @@ ActiveRecord::Schema.define(version: 2020_05_18_060845) do
     t.datetime "updated_at", null: false
     t.index ["player_id"], name: "index_player_position_tags_on_player_id"
     t.index ["position_tag_id"], name: "index_player_position_tags_on_position_tag_id"
+  end
+
+  create_table "player_strength_tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "player_id", null: false
+    t.bigint "strength_tag_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["player_id"], name: "index_player_strength_tags_on_player_id"
+    t.index ["strength_tag_id"], name: "index_player_strength_tags_on_strength_tag_id"
   end
 
   create_table "players", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -75,6 +100,13 @@ ActiveRecord::Schema.define(version: 2020_05_18_060845) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "strength_tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "strength"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["strength"], name: "index_strength_tags_on_strength", unique: true
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "twitter_id", null: false
     t.string "email"
@@ -89,8 +121,12 @@ ActiveRecord::Schema.define(version: 2020_05_18_060845) do
     t.index ["twitter_id"], name: "index_users_on_twitter_id", unique: true
   end
 
+  add_foreign_key "player_genre_tags", "genre_tags"
+  add_foreign_key "player_genre_tags", "players"
   add_foreign_key "player_position_tags", "players"
   add_foreign_key "player_position_tags", "position_tags"
+  add_foreign_key "player_strength_tags", "players"
+  add_foreign_key "player_strength_tags", "strength_tags"
   add_foreign_key "players", "spikes"
   add_foreign_key "spike_ground_tags", "ground_tags"
   add_foreign_key "spike_ground_tags", "spikes"
