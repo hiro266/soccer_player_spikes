@@ -8,12 +8,16 @@ tr
     = image_tag player.image.to_s, class: 'rounded-circle mr15', width: '40', height: '40', id: 'header-profile'
   td
     - player.position_tags.each do |t|
-      .card-text.mr-1.badge.badge-info
+      .card-text.mr-1.badge.badge-success
         = t.position
   td
     - player.genre_tags.each do |t|
       .card-text.mr-1.badge.badge-danger
         = t.genre
+  td
+    - player.strength_tags.each do |t|
+      .card-text.mr-1.badge.badge-info
+        = t.strength
   td
     = l player.created_at, format: :long
   td

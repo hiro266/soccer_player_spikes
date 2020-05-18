@@ -21,8 +21,13 @@
             | FW,MF,DF,GK
         .form-group
           = f.label :genre
-          = f.text_field :genre, value: @genre_tags_, class: "form-control"
+          = f.text_field :genre, value: @genre_tags, class: "form-control"
           p
             | 日本代表,五輪代表,バロンドール候補
+        .form-group
+          = f.label :strength
+          = f.text_field :strength, value: @strength_tags, class: "form-control"
+          p
+            | スピード,テクニック,パワー
         .action.mt-3
           = f.submit class: "btn btn-primary"
