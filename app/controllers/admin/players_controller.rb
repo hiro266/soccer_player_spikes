@@ -19,9 +19,7 @@ class Admin::PlayersController < Admin::BaseController
     @genre_tags = params[:player][:genre]
     @strength_tags = params[:player][:strength]
     if @player.save
-      @player.save_position_tags_for_player(@position_tags)
-      @player.save_genre_tags_for_player(@genre_tags)
-      @player.save_strength_tags_for_player(@strength_tags)
+      @player.save_tags_for_player(@position_tags, @genre_tags, @strength_tags)
       redirect_to admin_players_url, success: t('.flash.create')
     else
       flash.now[:danger] = t('.flash.not_create')
@@ -40,9 +38,7 @@ class Admin::PlayersController < Admin::BaseController
     @genre_tags = params[:player][:genre]
     @strength_tags = params[:player][:strength]
     if @player.update(player_params)
-      @player.save_position_tags_for_player(@position_tags)
-      @player.save_genre_tags_for_player(@genre_tags)
-      @player.save_strength_tags_for_player(@strength_tags)
+      @player.save_tags_for_player(@position_tags, @genre_tags, @strength_tags)
       redirect_to admin_player_url(@player), success: t('.flash.update')
     else
       flash.now[:danger] = t('.flash.not_update')
