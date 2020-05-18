@@ -11,6 +11,10 @@ tr
       .card-text.mr-1.badge.badge-info
         = t.position
   td
+    - player.genre_tags.each do |t|
+      .card-text.mr-1.badge.badge-danger
+        = t.genre
+  td
     = l player.created_at, format: :long
   td
     = link_to '編集', edit_admin_player_path(player), class: 'btn btn-success'
