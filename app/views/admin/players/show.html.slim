@@ -32,6 +32,27 @@
                 = image_tag image.to_s, size: '100x100', class: 'image-thumbnail'
           tr
             th[scope="row"]
+              | ポジション
+            td
+              - @player.position_tags.each do |t|
+                .card-text.mr-1.badge.badge-success
+                  = t.position
+          tr
+            th[scope="row"]
+              | ジャンル
+            td
+              - @player.genre_tags.each do |t|
+                .card-text.mr-1.badge.badge-danger
+                  = t.genre
+          tr
+            th[scope="row"]
+              | タイプ
+            td
+              - @player.strength_tags.each do |t|
+                .card-text.mr-1.badge.badge-info
+                  = t.strength
+          tr
+            th[scope="row"]
               | 作成日時
             td
               = l @player.created_at, format: :long

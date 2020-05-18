@@ -43,8 +43,7 @@ class Admin::SpikesController < Admin::BaseController
     redirect_to admin_spikes_url, success: t('.flash.destroy')
   end
 
-  def show
-  end
+  def show; end
 
   private
 

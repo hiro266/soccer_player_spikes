@@ -15,9 +15,12 @@ ja:
         notification: メール通知
       player:
         id: ID
-        name: 名前
+        name: 選手名
         image: 選手画像
         spike_id: 着用スパイク
+        position: ポジション
+        genre: ジャンル
+        strength: タイプ
         create_at: 作成日時
       spike:
         id: ID
@@ -30,7 +33,13 @@ ja:
         images: スパイク画像
         create_at: 作成日時
       ground_tag:
-        ground_tag: 適正グラウンド
+        ground: 適正グラウンド
+      position_tag:
+        position: ポジション
+      genre_tag:
+        genre: ジャンル
+      strength_tag:
+        strength: タイプ
   helpers:
     select:
       prompt: 選択してください
