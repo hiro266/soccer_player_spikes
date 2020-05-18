@@ -14,5 +14,10 @@
         .form-group
           = f.label :spike_id, class: "d-block"
           = f.collection_select(:spike_id, @spikes, :id, :name, {prompt: "着用スパイク"})
+        .form-group
+          = f.label :position
+          = f.text_field :position, value: @tag_list, class: "form-control"
+          p
+            | FW,MF,DF,GK
         .action.mt-3
           = f.submit class: "btn btn-primary"

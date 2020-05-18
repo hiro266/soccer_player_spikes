@@ -7,6 +7,10 @@ tr
   td
     = image_tag player.image.to_s, class: 'rounded-circle mr15', width: '40', height: '40', id: 'header-profile'
   td
+    - player.position_tags.each do |t|
+      .card-text.mr-1.badge.badge-info
+        = t.position
+  td
     = l player.created_at, format: :long
   td
     = link_to '編集', edit_admin_player_path(player), class: 'btn btn-success'

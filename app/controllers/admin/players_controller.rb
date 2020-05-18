@@ -15,7 +15,9 @@ class Admin::PlayersController < Admin::BaseController
 
   def create
     @player = Player.new(player_params)
+    @tag_list = self.params[:player][:position]
     if @player.save
+      @player.save_tags_for_player(@tag_list)
       redirect_to admin_players_url, success: t('.flash.create')
     else
       flash.now[:danger] = t('.flash.not_create')
