@@ -7,19 +7,19 @@
         .d-block
           - player.position_tags.each do |t|
             .card-text.mr-1.badge.badge-success
-              = t.position
+              = t.name
         .d-block
           - player.genre_tags.each do |t|
             .card-text.mr-1.badge.badge-danger
-              = t.genre
+              = t.name
         .d-block
           - player.strength_tags.each do |t|
             .card-text.mr-1.badge.badge-info
-              = t.strength
+              = t.name
       .card-header-right.ml-auto
         = image_tag player.image.to_s, class: 'player-image', id: 'js-header-profile'
   .card-body
-    = link_to player_path(player) do
+    = link_to root_path do
       .swiper-container
         .swiper-wrapper
           - player.spike.images.each do |image|
@@ -32,4 +32,4 @@
     .spike-name
       = "商品名：#{player.spike.name}"
     .spike-price
-      = "メーカー希望価格(税込)：#{player.spike.tax_included}"
+      = "メーカー希望価格(税込)：#{player.spike.tax_included}円"
