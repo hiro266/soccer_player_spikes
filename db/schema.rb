@@ -23,10 +23,9 @@ ActiveRecord::Schema.define(version: 2020_05_18_093746) do
   end
 
   create_table "genre_tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "genre"
+    t.string "genre", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["genre"], name: "index_genre_tags_on_genre", unique: true
   end
 
   create_table "ground_tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -73,10 +72,9 @@ ActiveRecord::Schema.define(version: 2020_05_18_093746) do
   end
 
   create_table "position_tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "position"
+    t.string "position", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["position"], name: "index_position_tags_on_position", unique: true
   end
 
   create_table "spike_ground_tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -101,10 +99,9 @@ ActiveRecord::Schema.define(version: 2020_05_18_093746) do
   end
 
   create_table "strength_tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "strength"
+    t.string "strength", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["strength"], name: "index_strength_tags_on_strength", unique: true
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

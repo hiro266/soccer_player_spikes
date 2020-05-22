@@ -15,11 +15,11 @@ class Admin::PlayersController < Admin::BaseController
 
   def create
     @player = Player.new(player_params)
-    @position_tags = params[:player][:position]
-    @genre_tags = params[:player][:genre]
-    @strength_tags = params[:player][:strength]
+    @position_tag_names = params[:player][:position]
+    @genre_tag_names = params[:player][:genre]
+    @strength_tag_names = params[:player][:strength]
     if @player.save
-      @player.save_tags_for_player(@position_tags, @genre_tags, @strength_tags)
+      @player.save_tags_for_player(@position_tag_names, @genre_tag_names, @strength_tag_names)
       redirect_to admin_players_url, success: t('.flash.create')
     else
       flash.now[:danger] = t('.flash.not_create')
@@ -28,17 +28,17 @@ class Admin::PlayersController < Admin::BaseController
   end
 
   def edit
-    @position_tags = @player.position_tags.pluck(:position).join(',')
-    @genre_tags = @player.genre_tags.pluck(:genre).join(',')
-    @strength_tags = @player.strength_tags.pluck(:strength).join(',')
+    @position_tag_names = @player.position_tags.pluck(:position).join(',')
+    @genre_tag_names = @player.genre_tags.pluck(:genre).join(',')
+    @strength_tag_names = @player.strength_tags.pluck(:strength).join(',')
   end
 
   def update
-    @position_tags = params[:player][:position]
-    @genre_tags = params[:player][:genre]
-    @strength_tags = params[:player][:strength]
+    @position_tag_names = params[:player][:position]
+    @genre_tag_names = params[:player][:genre]
+    @strength_tag_names = params[:player][:strength]
     if @player.update(player_params)
-      @player.save_tags_for_player(@position_tags, @genre_tags, @strength_tags)
+      @player.save_tags_for_player(@position_tag_names, @genre_tag_names, @strength_tag_names)
       redirect_to admin_player_url(@player), success: t('.flash.update')
     else
       flash.now[:danger] = t('.flash.not_update')

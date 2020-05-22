@@ -31,6 +31,7 @@ ja:
         slogan: スローガン
         characteristic: 商品説明
         images: スパイク画像
+        ground: 適正グラウンド
         create_at: 作成日時
       ground_tag:
         ground: 適正グラウンド
