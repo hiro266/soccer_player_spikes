@@ -62,7 +62,6 @@ ActiveRecord::Schema.define(version: 2020_05_22_093152) do
     t.string "name", null: false
     t.integer "price", null: false
     t.string "color", null: false
-    t.text "slogan", null: false
     t.text "characteristic", null: false
     t.string "images", null: false
     t.datetime "created_at", null: false

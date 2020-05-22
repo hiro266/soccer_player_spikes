@@ -53,6 +53,6 @@ class Admin::SpikesController < Admin::BaseController
 
     def spike_params
       params.require(:spike)
-            .permit(:maker, :name, :price, :color, :slogan, :characteristic, images: [])
+            .permit(:maker, :name, :price, :color, :characteristic, images: [])
     end
 end

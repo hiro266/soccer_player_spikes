@@ -28,7 +28,6 @@ ja:
         name: 商品名
         price: 価格
         color: 色
-        slogan: スローガン
         characteristic: 商品説明
         images: スパイク画像
         ground: 適正グラウンド
