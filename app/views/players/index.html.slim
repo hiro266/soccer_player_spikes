@@ -1,2 +1,4 @@
-h1 Players#index
-p Find me in app/views/players/index.html.slim
+.container
+  .row
+    = render @players
+  = paginate @players

@@ -1,3 +1,18 @@
 @import 'bootstrap-material-design/dist/css/bootstrap-material-design';
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
+@import 'swiper/css/swiper';
+
+.player-name {
+  font-size: 24px;
+}
+
+.player-image {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}
+
+.card-footer {
+  font-size: 18px;
+}

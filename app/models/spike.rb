@@ -20,4 +20,8 @@ class Spike < ApplicationRecord
   def save_tags_for_spike(ground_tag_names)
     self.ground_tags = ground_tag_names.split(',').map { |name| GroundTag.find_or_create_by(ground: name) }
   end
+
+  def tax_included
+    (self.price * 1.1).round
+  end
 end
