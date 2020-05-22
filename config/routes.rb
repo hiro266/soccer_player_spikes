@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'players#index'
-  resources :users, only: %i[edit update]
+  resource :user, only: %i[show edit update]
   namespace :admin do
     root 'dashboards#index'
     resources :users, only: %i{index show edit update destroy}
