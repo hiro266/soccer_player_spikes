@@ -36,21 +36,21 @@
             td
               - @player.position_tags.each do |t|
                 .card-text.mr-1.badge.badge-success
-                  = t.position
+                  = t.name
           tr
             th[scope="row"]
               | ジャンル
             td
               - @player.genre_tags.each do |t|
                 .card-text.mr-1.badge.badge-danger
-                  = t.genre
+                  = t.name
           tr
             th[scope="row"]
               | タイプ
             td
               - @player.strength_tags.each do |t|
                 .card-text.mr-1.badge.badge-info
-                  = t.strength
+                  = t.name
           tr
             th[scope="row"]
               | 作成日時
