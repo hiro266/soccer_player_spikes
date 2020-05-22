@@ -1,0 +1,35 @@
+.card.col-sm-12.col-lg-4.mt-2.mb-2
+  .card-header
+    .d-flex
+      .card-header-left
+        .player-name
+          = player.name
+        .d-block
+          - player.position_tags.each do |t|
+            .card-text.mr-1.badge.badge-success
+              = t.position
+        .d-block
+          - player.genre_tags.each do |t|
+            .card-text.mr-1.badge.badge-danger
+              = t.genre
+        .d-block
+          - player.strength_tags.each do |t|
+            .card-text.mr-1.badge.badge-info
+              = t.strength
+      .card-header-right.ml-auto
+        = image_tag player.image.to_s, class: 'player-image', id: 'js-header-profile'
+  .card-body
+    = link_to player_path(player) do
+      .swiper-container
+        .swiper-wrapper
+          - player.spike.images.each do |image|
+            .swiper-slide
+              = image_tag image.to_s, class: 'card-img-top'
+        .swiper-pagination
+  .card-footer
+    .spike-maker
+      = "メーカー：#{player.spike.maker}"
+    .spike-name
+      = "商品名：#{player.spike.name}"
+    .spike-price
+      = "メーカー希望価格(税込)：#{player.spike.tax_included}"

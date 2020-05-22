@@ -28,6 +28,11 @@
             th[scope="row"]
               | 着用スパイク
             td
+              = @spike.name
+          tr
+            th[scope="row"]
+              |
+            td
               - @spike.images.each do |image|
                 = image_tag image.to_s, size: '100x100', class: 'image-thumbnail'
           tr
