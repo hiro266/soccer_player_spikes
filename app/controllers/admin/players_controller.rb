@@ -28,9 +28,9 @@ class Admin::PlayersController < Admin::BaseController
   end
 
   def edit
-    @position_tag_names = @player.position_tags.pluck(:position).join(',')
-    @genre_tag_names = @player.genre_tags.pluck(:genre).join(',')
-    @strength_tag_names = @player.strength_tags.pluck(:strength).join(',')
+    @position_tag_names = @player.position_tags.pluck(:name).join(',')
+    @genre_tag_names = @player.genre_tags.pluck(:name).join(',')
+    @strength_tag_names = @player.strength_tags.pluck(:name).join(',')
   end
 
   def update

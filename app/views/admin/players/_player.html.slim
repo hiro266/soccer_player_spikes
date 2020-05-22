@@ -9,15 +9,15 @@ tr
   td
     - player.position_tags.each do |t|
       .card-text.mr-1.badge.badge-success
-        = t.position
+        = t.name
   td
     - player.genre_tags.each do |t|
       .card-text.mr-1.badge.badge-danger
-        = t.genre
+        = t.name
   td
     - player.strength_tags.each do |t|
       .card-text.mr-1.badge.badge-info
-        = t.strength
+        = t.name
   td
     = l player.created_at, format: :long
   td
