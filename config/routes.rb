@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'players#index'
+  resources :spikes, only: %i[show]
   resource :user, only: %i[show edit update]
   namespace :admin do
     root 'dashboards#index'
