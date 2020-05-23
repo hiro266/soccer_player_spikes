@@ -1,5 +1,5 @@
 - if player.genre_tags.any? { |genre_tag| genre_tag.name.include?('日本代表') }
-  .card.col-sm-12.col-lg-4.mt-2.mb-2
+  .card.col-sm-12.col-lg-4.my-2
     .card-header
       .d-flex
         .card-header-left
@@ -20,7 +20,7 @@
         .card-header-right.ml-auto
           = image_tag player.image.to_s, class: 'player-image', id: 'js-header-profile'
     .card-body
-      = link_to root_path do
+      = link_to spike_path(player.spike) do
         .swiper-container
           .swiper-wrapper
             - player.spike.images.each do |image|
@@ -29,8 +29,10 @@
           .swiper-pagination
     .card-footer
       .spike-maker
-        = "メーカー：#{player.spike.maker}"
+        = "■メーカー：#{player.spike.maker}"
       .spike-name
-        = "商品名：#{player.spike.name}"
+        = "■商品名：#{player.spike.name}"
       .spike-price
-        = "メーカー希望小売価格：¥#{player.spike.tax_included}(税込)"
+        | ■メーカー希望小売価格
+        br
+        = "¥#{player.spike.tax_included}(税込)"
