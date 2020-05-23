@@ -20,4 +20,8 @@ class Player < ApplicationRecord
     #----タイプタグの処理
     self.strength_tags = strength_tag_names.split(',').map { |name| StrengthTag.find_or_create_by(name: name) }
   end
+
+  def player_wearing_this_spike(spike)
+    self.spike_id == spike.id
+  end
 end

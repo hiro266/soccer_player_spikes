@@ -11,7 +11,6 @@ class Spike < ApplicationRecord
             :name,
             :price,
             :color,
-            :slogan,
             :characteristic,
             :images,
             presence: true

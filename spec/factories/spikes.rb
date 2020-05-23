@@ -4,7 +4,6 @@ FactoryBot.define do
     name { "MyString" }
     price { "MyString" }
     color { "MyString" }
-    slogan { "MyText" }
     characteristic { "MyText" }
     images { "MyString" }
   end
