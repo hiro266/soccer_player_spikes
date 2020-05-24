@@ -3,6 +3,10 @@ ja:
     flash:
       login: ログインしました
       logout: ログアウトしました
+  users:
+    flash:
+      update: ユーザー情報を更新しました
+      not_update: ユーザー情報の更新に失敗にしました
   admin:
     users:
       flash:

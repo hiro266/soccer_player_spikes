@@ -1,0 +1,28 @@
+.card.col-sm-12.col-md-6.my-2.mx-auto
+  .card-header
+    .d-flex
+      .user-show-card-header-left
+        | プロフィール詳細
+      .user-show-card-header-right.ml-auto
+        = link_to  '編集', edit_user_path, class: 'edit-profile-btn'
+  .card-body
+    .current-user-account
+      .d-flex
+        .current-user-screen-name
+          = current_user.screen_name
+          br
+          = current_user.email
+        .current-user-avatar
+          = image_tag current_user.avatar.to_s, class: 'avatar'
+      .current-user-notification
+        | メール通知
+        br
+        = current_user.notification_i18n
+      .favorite-players
+        | お気に入り選手
+        br
+        | 写真並べる
+      .favorite-spikes
+        | お気に入りスパイク
+        br
+        | 写真並べる

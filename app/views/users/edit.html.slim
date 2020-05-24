@@ -1,0 +1,20 @@
+.card.col-sm-12.col-md-6.my-2.mx-auto
+  .card-header
+    .d-flex
+      .user-show-card-header-left
+        | プロフィール編集
+      .current-user-avatar
+        = image_tag current_user.avatar.to_s, class: 'avatar'
+  .card-body
+    = form_with model: @user, url: user_path, local: true do |f|
+      .form-group
+        = f.label :screen_name
+        = f.text_field :screen_name, class: "form-control", disabled: true
+      .form-group
+        = f.label :email
+        = f.text_field :email, class: "form-control", disabled: true
+      .form-group
+          = f.label :notification
+          = f.select :notification, User.notifications.keys.map { |k| [I18n.t("enums.user.notification.#{k}"), k] }, {}, {class:"form-control"}
+      .action.mt-3
+          = f.submit class: "btn btn-primary"
