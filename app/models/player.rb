@@ -12,6 +12,10 @@ class Player < ApplicationRecord
             :image,
             presence: true
 
+  scope :genre_tag_is_all_japan?, -> { joins(:tags).where(tags: { name: '日本代表' } ) }
+  scope :genre_tag_is_olympic_japan?, -> { joins(:tags).where(tags: { name: '五輪候補' } ) }
+  scope :genre_tag_is_baron_d_or?, -> { joins(:tags).where(tags: { name: 'バロンドール候補' } ) }
+
   def save_tags_for_player(position_tag_names, genre_tag_names, strength_tag_names)
     # ----ポジションタグの処理
     self.position_tags = position_tag_names.split(',').map { |name| PositionTag.find_or_create_by(name: name) }
