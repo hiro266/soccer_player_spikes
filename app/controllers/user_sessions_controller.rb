@@ -17,6 +17,6 @@ class UserSessionsController < ApplicationController
   def admin_login
     admin_user = User.find_by!(role: 'admin')
     auto_login(admin_user)
-    redirect_to root_path, success: "管理ユーザーで#{t('.flash.login')}"
+    redirect_to admin_root_path, success: "管理ユーザーで#{t('.flash.login')}"
   end
 end
