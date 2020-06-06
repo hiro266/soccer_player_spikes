@@ -1,6 +1,5 @@
 class Player < ApplicationRecord
   include Common_Processing
-  mount_uploader :image, PlayerUploader
   belongs_to :spike
   has_many :player_tags, dependent: :destroy
   has_many :tags, through: :player_tags
@@ -8,9 +7,7 @@ class Player < ApplicationRecord
   has_many :genre_tags, through: :player_tags
   has_many :strength_tags, through: :player_tags
 
-  validates :name,
-            :image,
-            presence: true
+  validates :name, presence: true
 
   scope :genre_tag_is_all_japan?, -> { joins(:tags).where(tags: { name: '日本代表' } ) }
   scope :genre_tag_is_olympic_japan?, -> { joins(:tags).where(tags: { name: '五輪候補' } ) }

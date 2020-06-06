@@ -9,9 +9,6 @@
           = f.label :name
           = f.text_field :name, class: "form-control"
         .form-group
-          = f.label :image, class: "d-block"
-          = f.file_field :image
-        .form-group
           = f.label :spike_id, class: "d-block"
           = f.collection_select(:spike_id, @spikes, :id, :name, {prompt: "着用スパイク"})
         .form-group

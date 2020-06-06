@@ -5,8 +5,6 @@ tr
     = link_to admin_player_path(player) do
       = player.name
   td
-    = image_tag player.image.to_s, class: 'rounded-circle mr15', size: '40', id: 'header-profile'
-  td
     - player.position_tags.each do |t|
       .card-text.mr-1.badge.badge-success
         = t.name

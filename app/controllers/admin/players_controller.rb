@@ -69,6 +69,6 @@ class Admin::PlayersController < Admin::BaseController
 
     def player_params
       params.require(:player)
-            .permit(:name, :image, :spike_id)
+            .permit(:name, :spike_id)
     end
 end
