@@ -16,7 +16,6 @@ ja:
       player:
         id: ID
         name: 選手名
-        image: 選手画像
         spike_id: 着用スパイク
         position: ポジション
         genre: ジャンル

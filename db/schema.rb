@@ -41,7 +41,6 @@ ActiveRecord::Schema.define(version: 2020_05_22_093152) do
 
   create_table "players", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
-    t.string "image", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "spike_id", null: false

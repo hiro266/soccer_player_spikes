@@ -4,6 +4,7 @@
       .card-header-left
         .player-name
           = player.name
+      .card-header-right.ml-auto
         .d-block
           - player.position_tags.each do |t|
             .card-text.mr-1.badge.badge-success
@@ -16,8 +17,6 @@
           - player.strength_tags.each do |t|
             .card-text.mr-1.badge.badge-info
               = t.name
-      .card-header-right.ml-auto
-        = image_tag player.image.to_s, class: 'player-image', id: 'js-header-profile'
   .card-body
     = link_to spike_path(player.spike) do
       .swiper-container

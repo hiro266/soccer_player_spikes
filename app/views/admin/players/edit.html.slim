@@ -9,10 +9,6 @@
           = f.label :name
           = f.text_field :name, class: "form-control"
         .form-group
-          = f.label :image
-          = f.file_field :image, class: 'form-control'
-          = image_tag @player.image.to_s, size: '100x100', class: 'image-thumbnail'
-        .form-group
           = f.label :spike_id, class: "d-block"
           = f.collection_select(:spike_id, @spikes, :id, :name, { }, {class: "form-control"})
           - @spike.images.each do |image|

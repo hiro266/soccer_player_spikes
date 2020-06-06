@@ -12,11 +12,6 @@ a {
 .player-name {
   font-size: 24px;
 }
-.player-image {
-  border-radius: 50%;
-  width: 100px;
-  height: 100px;
-}
 .card-footer {
   font-size: 18px;
 }
@@ -35,12 +30,6 @@ a {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-}
-.spike-show-player-image {
-  max-width: 100%;
-  width: 80px;
-  height: 80px;
-  margin-top: 10px;
 }
 .spike-show-maker {
   font-size: 18px;

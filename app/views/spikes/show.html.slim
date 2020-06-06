@@ -32,4 +32,4 @@
       .spike-show-player-box
         - @players.each do |player|
           -  if player.player_wearing_this_spike(@spike)
-            = image_tag player.image.to_s, class: 'spike-show-player-image', id: 'js-header-profile'
+            = player.name
