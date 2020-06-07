@@ -1,0 +1,24 @@
+tr
+  td
+    = player.id
+  td
+    = link_to admin_player_path(player) do
+      = player.name
+  td
+    - player.position_tags.each do |t|
+      .card-text.mr-1.badge.badge-success
+        = t.name
+  td
+    - player.genre_tags.each do |t|
+      .card-text.mr-1.badge.badge-danger
+        = t.name
+  td
+    - player.strength_tags.each do |t|
+      .card-text.mr-1.badge.badge-info
+        = t.name
+  td
+    = l player.created_at, format: :long
+  td
+    = link_to '編集', edit_admin_player_path(player), class: 'btn btn-success'
+    = link_to '削除', admin_player_path(player), class: 'btn btn-danger ml-3',
+      method: :delete, data: { confirm: '削除してよろしいですか？' }

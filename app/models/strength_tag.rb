@@ -1,0 +1,2 @@
+class StrengthTag < Tag
+end

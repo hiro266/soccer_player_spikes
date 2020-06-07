@@ -1,0 +1,30 @@
+.container
+  .row
+    .col-md-10.offset-md-1.col-lg-8.offset-lg-2
+      h1
+        | プレイヤー作成
+      = render 'layouts/error_messages', object: @player
+      = form_with model: @player, url: admin_players_path, local: true do |f|
+        .form-group
+          = f.label :name
+          = f.text_field :name, class: "form-control"
+        .form-group
+          = f.label :spike_id, class: "d-block"
+          = f.collection_select(:spike_id, @spikes, :id, :name, {prompt: "着用スパイク"})
+        .form-group
+          = f.label :position
+          = f.text_field :position, value: @position_tag_names, class: "form-control"
+          p
+            | FW,MF,DF,GK
+        .form-group
+          = f.label :genre
+          = f.text_field :genre, value: @genre_tag_names, class: "form-control"
+          p
+            | ニホンダイヒョウ,ゴリンコウホ,バロンドールコウホ
+        .form-group
+          = f.label :strength
+          = f.text_field :strength, value: @strength_tag_names, class: "form-control"
+          p
+            | スピード,テクニック,パワー
+        .action.mt-3
+          = f.submit class: "btn btn-primary"

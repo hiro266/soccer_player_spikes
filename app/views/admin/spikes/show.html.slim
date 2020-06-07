@@ -1,0 +1,59 @@
+.container
+  .row
+    .col-md-10.offset-md-1.col-lg-8.offset-lg-2
+      h1
+        | スパイク詳細
+      .text-right.mb-3
+        = link_to '編集', edit_admin_spike_path(@spike), class: 'btn btn-success'
+        = link_to '削除', admin_spike_path(@spike), class: 'btn btn-danger',
+          method: :delete, data: { confirm: '削除してよろしいですか？' }
+      table.table.table-bordered.bg-white
+        tbody
+          tr
+            th[scope="row"]
+              | ID
+            td
+              = @spike.id
+          tr
+            th[scope="row"]
+              | 画像
+            td
+              - @spike.images.each do |image|
+                = image_tag image.to_s, size: '100x100', class: 'image-thumbnail'
+          tr
+            th[scope="row"]
+              | 適正グラウンド
+            td
+              - @spike.ground_tags.each do |t|
+                .card-text.mr-1.badge.badge-fa9b02
+                  = t.ground
+          tr
+            th[scope="row"]
+              | メーカー
+            td
+              = @spike.maker
+          tr
+            th[scope="row"]
+              | 商品名
+            td
+              = @spike.name
+          tr
+            th[scope="row"]
+              | 価格
+            td
+              = "¥#{@spike.price}"
+          tr
+            th[scope="row"]
+              | 色
+            td
+              = @spike.color
+          tr
+            th[scope="row"]
+              | 商品説明
+            td
+              = @spike.characteristic
+          tr
+            th[scope="row"]
+              | 作成日時
+            td
+              = l @spike.created_at, format: :long

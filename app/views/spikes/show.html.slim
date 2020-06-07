@@ -1,0 +1,35 @@
+.card.col-sm-12.col-md-6.my-2.mx-auto
+  .card-header
+    .d-flex
+      .spike-show-card-header-left
+        .spike-show-maker
+          = @spike.maker
+        .spike-show-name
+          = @spike.name
+      .spike-show-card-header-right.ml-auto
+        .spike-show-price
+          span = "¥#{@spike.tax_included}"
+          | (税込)
+  .card-body
+    .swiper-container
+      .swiper-wrapper
+        - @spike.images.each do |image|
+          .swiper-slide
+            = image_tag image.to_s, class: 'card-img-top'
+      .swiper-pagination
+  .card-footer
+    .card-footer-title
+      | 商品説明
+    .spike-color
+      = "■カラー：#{@spike.color}"
+    .spike-characteristic
+      | ■特徴
+      br
+      = @spike.characteristic
+    .other-wearing-players
+      | ■ このスパイクを履いている選手
+      br
+      .spike-show-player-box
+        - @players.each do |player|
+          -  if player.player_wearing_this_spike(@spike)
+            = player.name

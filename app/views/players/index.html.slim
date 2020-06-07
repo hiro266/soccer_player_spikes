@@ -1,0 +1,18 @@
+.tab.clearfix.mouhitu
+  li(class = "#{'active' if params[:page] == nil}")
+    | ニホンダイヒョウ
+  li(class = "#{'active' if params[:page] == 'olympic_page'}")
+    | ゴリンコウホ
+  li(class = "#{'active' if params[:page] == 'baron_d_or_page'}")
+    | バロンドールコウホ
+.players-area
+  .container(class = "#{'show' if params[:page] == nil}")
+    = render 'search_form', url: root_path, q: @q
+    .row
+      = render 'all_japan_players', players: @all_japan_players
+  .container(class = "#{'show' if params[:page] == 'olympic_page'}")
+    .row
+      = render 'olympic_japan_players', players: @olympic_japan_players
+  .container(class = "#{'show' if params[:page] == 'baron_d_or_page'}")
+    .row
+      = render 'fifa_baron_d_or_players', players: @baron_d_or_players

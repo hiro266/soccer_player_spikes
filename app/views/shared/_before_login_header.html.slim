@@ -1,0 +1,9 @@
+nav.navbar.navbar-expand-lg.navbar-light
+  = link_to 'スパイクリスト', root_path, class: 'navbar-brand mouhitu'
+  button.bg-secondary.navbar-toggler[type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"]
+    span.navbar-toggler-icon
+  #navbarSupportedContent.collapse.navbar-collapse
+    ul.navbar-nav.ml-auto
+      li.nav-item.active
+        = link_to login_path, class: 'nav-link header-link' do
+          | ログイン

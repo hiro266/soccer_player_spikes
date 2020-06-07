@@ -1,0 +1,48 @@
+ja:
+  activerecord:
+    models:
+      user: ユーザー
+      player: 選手
+      spike: スパイク
+    attributes:
+      user:
+        id: ID
+        twitter_id: Twitter ID
+        email: メールアドレス
+        screen_name: 名前
+        avatar: アバター
+        role: 権限
+        notification: メール通知
+      player:
+        id: ID
+        name: 選手名
+        spike_id: 着用スパイク
+        position: ポジション
+        genre: ジャンル
+        strength: タイプ
+        create_at: 作成日時
+      spike:
+        id: ID
+        maker: メーカー
+        name: 商品名
+        price: 価格
+        color: 色
+        characteristic: 商品説明
+        images: スパイク画像
+        ground: 適正グラウンド
+        create_at: 作成日時
+      ground_tag:
+        ground: 適正グラウンド
+      position_tag:
+        position: ポジション
+      genre_tag:
+        genre: ジャンル
+      strength_tag:
+        strength: タイプ
+  helpers:
+    select:
+      prompt: 選択してください
+    submit:
+      create: 登録する
+      submit: 保存する
+      update: 更新する

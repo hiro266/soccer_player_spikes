@@ -1,0 +1,2 @@
+class PositionTag < Tag
+end

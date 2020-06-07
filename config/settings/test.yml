@@ -1,0 +1,4 @@
+twitter:
+  key: <%= Rails.application.credentials.dig(:twitter, :key) %>
+  secret_key: <%= Rails.application.credentials.dig(:twitter, :secret_key) %>
+  callback_url: 'http://127.0.0.1:3000/oauth/callback?provider=twitter'

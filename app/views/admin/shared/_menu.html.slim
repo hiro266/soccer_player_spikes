@@ -1,0 +1,29 @@
+aside.main-sidebar.sidebar-dark-primary.elevation-4
+  = link_to admin_root_path, class: 'brand-link' do
+    = image_tag "AdminLTELogo.png", alt: "AdminLTE Logo", class: "brand-image img-circle elevation-3", style: "opacity: .8"
+    span.brand-text.font-weight-light
+      | AdminLTE 3
+  .sidebar
+    nav.mt-2
+      ul.nav.nav-pills.nav-sidebar.flex-column[data-widget="treeview" role="menu" data-accordion="false"]
+        li.nav-item
+          = active_link_to admin_users_path, class: "nav-link" do
+            i.fas.fa-user.mr-3
+            p
+              |  ユーザー一覧
+  .sidebar
+    nav.mt-2
+      ul.nav.nav-pills.nav-sidebar.flex-column[data-widget="treeview" role="menu" data-accordion="false"]
+        li.nav-item
+          = active_link_to admin_players_path, class: "nav-link" do
+            i.fas.fa-running.mr-3
+            p
+              |  プレイヤ一覧
+  .sidebar
+    nav.mt-2
+      ul.nav.nav-pills.nav-sidebar.flex-column[data-widget="treeview" role="menu" data-accordion="false"]
+        li.nav-item
+          = active_link_to admin_spikes_path, class: "nav-link" do
+            i.fas.fa-shoe-prints.mr-3
+            p
+              |  スパイク一覧

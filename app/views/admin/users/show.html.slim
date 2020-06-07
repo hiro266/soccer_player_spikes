@@ -1,0 +1,46 @@
+.container
+  .row
+    .col-md-10.offset-md-1.col-lg-8.offset-lg-2
+      h1
+        | ユーザー詳細
+      .text-right.mb-3
+        = link_to '編集', edit_admin_user_path(@user), class: 'btn btn-success'
+        = link_to '削除', admin_user_path(@user), class: 'btn btn-danger',
+          method: :delete, data: { confirm: '削除してよろしいですか？' }
+      table.table.table-bordered.bg-white
+        tbody
+          tr
+            th[scope="row"]
+              | ID
+            td
+              = @user.id
+          tr
+            th[scope="row"]
+              | アバター
+            td
+              = image_tag @user.avatar.to_s, class: 'rounded-circle mr15', width: '40', height: '40', id: 'header-profile'
+          tr
+            th[scope="row"]
+              | ユーザーネーム
+            td
+              = @user.screen_name
+          tr
+            th[scope="row"]
+              | メールアドレス
+            td
+              = @user.email
+          tr
+            th[scope="row"]
+              | メール通知
+            td
+              = @user.notification_i18n
+          tr
+            th[scope="row"]
+              | 権限
+            td
+              = @user.role_i18n
+          tr
+            th[scope="row"]
+              | 作成日時
+            td
+              = l @user.created_at, format: :long

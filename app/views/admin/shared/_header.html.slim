@@ -1,0 +1,12 @@
+nav.main-header.navbar.navbar-expand.bg-white.navbar-light.border-bottom
+  ul.navbar-nav
+    li.nav-item
+      a.nav-link[data-widget="pushmenu" href="#"]
+        i.fas.fa-bars
+  ul.navbar-nav.ml-auto
+    li.nav-item
+      = link_to 'プレイヤー作成', new_admin_player_path, class: 'nav-link'
+    li.nav-item
+      = link_to 'スパイク作成', new_admin_spike_path, class: 'nav-link'
+    li.nav-item
+      = link_to 'ログアウト', logout_path, method: :delete, class: 'nav-link'

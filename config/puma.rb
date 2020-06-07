@@ -11,6 +11,13 @@ threads threads_count, threads_count
 #
 port        ENV.fetch("PORT") { 3000 }
 
+# if Rails.env.development?
+#   ssl_bind 'localhost',
+#             '3000',
+#             cert: 'config/certs/localhost.pem',
+#             key: 'config/certs/localhost-key.pem'
+# end
+
 # Specifies the `environment` that Puma will run in.
 #
 environment ENV.fetch("RAILS_ENV") { "development" }

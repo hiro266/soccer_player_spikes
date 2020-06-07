@@ -10,9 +10,20 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'bootsnap', '>= 1.1.0', require: false
-# slim
+
 gem 'slim-rails'
 gem 'html2slim'
+gem 'font-awesome-sass'
+gem 'material_icons'
+gem 'jquery-rails'
+gem 'sorcery'
+gem 'config'
+gem 'rails-i18n', '~> 5.1'
+gem 'active_link_to'
+gem 'ransack'
+gem 'kaminari'
+gem 'enum_help'
+gem 'carrierwave'
 
 # gem 'mini_racer', platforms: :ruby
 # gem 'jbuilder', '~> 2.5'
@@ -23,20 +34,24 @@ gem 'html2slim'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'faker'
 
   # rubocop
-  gem 'rubocop'
+  gem 'rubocop', require: false
   gem 'rails_best_practices'
 
   #error
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'pry-byebug'
+  gem 'pry-rails'
 
   #test
   gem 'rspec-rails'
+  gem 'capybara'
   gem 'webdrivers'
   gem 'factory_bot_rails'
+  gem 'rspec_junit_formatter'
 end
 
 group :development do

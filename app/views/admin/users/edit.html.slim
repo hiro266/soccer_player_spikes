@@ -1,0 +1,24 @@
+.container
+  .row
+    .col-md-10.offset-md-1.col-lg-8.offset-lg-2
+      h1
+        | ユーザー編集
+      = render 'layouts/error_messages', object: @user
+      = form_with model: @user, url: admin_user_path, local: true do |f|
+        .form-group
+          = f.label :twitter_id
+          = f.text_field :twitter_id, class: "form-control", disabled: true
+        .form-group
+          = f.label :screen_name
+          = f.text_field :screen_name, class: "form-control", disabled: true
+        .form-group
+          = f.label :email
+          = f.email_field :email, class: "form-control", disabled: true
+        .form-group
+          = f.label :notification
+          = f.select :notification, User.notifications.keys.map { |k| [I18n.t("enums.user.notification.#{k}"), k] }, {}, {class:"form-control"}
+        .form-group
+          = f.label :role
+          = f.select :role, User.roles.keys.map { |k| [I18n.t("enums.user.role.#{k}"), k] }, {}, {class:"form-control"}
+        .action.mt-3
+          = f.submit class: "btn btn-primary"
