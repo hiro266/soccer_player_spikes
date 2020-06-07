@@ -5,5 +5,6 @@ module Common_Processing
 
   included do
     scope :new_order, -> { order(created_at: :desc) }
+    scope :name_asc, -> { order(:name) }
   end
 end
