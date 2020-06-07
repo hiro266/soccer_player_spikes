@@ -7,6 +7,7 @@
     | バロンドールコウホ
 .players-area
   .container(class = "#{'show' if params[:page] == nil}")
+    = render 'search_form', url: root_path, q: @q
     .row
       = render 'all_japan_players', players: @all_japan_players
   .container(class = "#{'show' if params[:page] == 'olympic_page'}")
