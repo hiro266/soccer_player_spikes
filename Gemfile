@@ -24,6 +24,7 @@ gem 'ransack'
 gem 'kaminari'
 gem 'enum_help'
 gem 'carrierwave'
+gem 'bootstrap'
 gem 'mini_racer', platforms: :ruby
 
 # gem 'jbuilder', '~> 2.5'
