@@ -37,6 +37,7 @@ require "capistrano/rails/migrations"
 require "capistrano/scm/git"
 require "capistrano/puma"
 require "capistrano/nginx"
+require "capistrano/yarn"
 
 install_plugin Capistrano::SCM::Git
 install_plugin Capistrano::Puma
