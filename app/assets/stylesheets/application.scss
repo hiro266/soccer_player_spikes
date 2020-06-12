@@ -3,10 +3,12 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 @import 'swiper/css/swiper';
-@import 'fonts';
 
 $main-color: #4169e1;
 
+body {
+  font-family: 'Sawarabi Mincho', sans-serif;
+}
 a {
   &:hover {
     color: #fff;
