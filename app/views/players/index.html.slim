@@ -9,10 +9,13 @@
   .container(class = "#{'show' if params[:page] == nil}")
     = render 'search_form', url: root_path, q: @q
     .row
-      = render 'all_japan_players', players: @all_japan_players
+      = render partial: 'player', collection: @all_japan_players, as: 'player'
+    = paginate @all_japan_players, param_name: :all_japan, params: { page: nil }
   .container(class = "#{'show' if params[:page] == 'olympic_page'}")
     .row
-      = render 'olympic_japan_players', players: @olympic_japan_players
+      = render partial: 'player', collection: @olympic_japan_players, as: 'player'
+    = paginate @olympic_japan_players, param_name: :olympic_japan, params: { page: 'olympic_page' }
   .container(class = "#{'show' if params[:page] == 'baron_d_or_page'}")
     .row
-      = render 'fifa_baron_d_or_players', players: @baron_d_or_players
+      = render partial: 'player', collection: @baron_d_or_players, as: 'player'
+    = paginate @baron_d_or_players, param_name: :baron_d_or, params: { page: 'baron_d_or_page' }
