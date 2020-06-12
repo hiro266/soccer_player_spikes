@@ -1,9 +1,14 @@
 @font-face {
   font-family: 'mouhitu';
   src: font-url('/assets/mouhitu.ttf');
-  src: assets-url('/assets/mouhitu.ttf');
 }
-
+@font-face {
+  font-family: 'kssweetheavycalligraphy';
+  src: font-url('/assets/kssweetheavycalligraphy.ttf');
+}
 .mouhitu {
   font-family: 'mouhitu';
+}
+.gintama {
+  font-family: 'kssweetheavycalligraphy';
 }
