@@ -4,4 +4,4 @@ aws:
 twitter:
   key: <%= Rails.application.credentials.dig(:twitter, :key) %>
   secret_key: <%= Rails.application.credentials.dig(:twitter, :secret_key) %>
-  callback_url: 'http://spike-list.work/oauth/callback?provider=twitter'
+  callback_url: 'https://spike-list.work/oauth/callback?provider=twitter'
