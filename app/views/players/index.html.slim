@@ -1,10 +1,10 @@
 .tab.clearfix.mouhitu
   li(class = "#{'active' if params[:page] == nil}")
-    | ニホンダイヒョウ
+    | 日本代表
   li(class = "#{'active' if params[:page] == 'olympic_page'}")
-    | ゴリンコウホ
+    | 五輪候補
   li(class = "#{'active' if params[:page] == 'baron_d_or_page'}")
-    | バロンドールコウホ
+    | バロンドール候補
 .players-area
   .container(class = "#{'show' if params[:page] == nil}")
     = render 'search_form', url: root_path, q: @q
