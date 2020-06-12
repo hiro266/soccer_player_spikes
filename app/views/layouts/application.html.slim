@@ -8,7 +8,7 @@ html
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
-    link[href="https://spike-list.work/assets/fonts/mouhitu.ttf" rel="font"]
+    <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap" rel="stylesheet">
   body
     - if current_user
       = render 'shared/header'
