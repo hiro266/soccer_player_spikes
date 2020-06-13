@@ -5,9 +5,10 @@
     | 五輪候補
   li(class = "#{'active' if params[:page] == 'baron_d_or_page'}")
     | バロンドール候補
+.container
+  = render 'search_form', url: root_path, q: @q
 .players-area
   .container(class = "#{'show' if params[:page] == nil}")
-    = render 'search_form', url: root_path, q: @q
     .row
       = render partial: 'player', collection: @all_japan_players, as: 'player'
     = paginate @all_japan_players, param_name: :all_japan, params: { page: nil }
