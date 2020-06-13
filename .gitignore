@@ -34,5 +34,4 @@ config/environments/*.local.yml
 # ローカルSSL証明書
 /config/certs/*
 # carrierwave画像
-app/assets/images/
 public/uploads/
