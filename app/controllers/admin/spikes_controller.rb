@@ -4,7 +4,7 @@ class Admin::SpikesController < Admin::BaseController
 
   def index
     @q = Spike.ransack(params[:q]) # 検索オブジェクト作成
-    @spikes = @q.result.new_order.page(params[:page]) # 検索結果(何もなければ全件取得)
+    @spikes = @q.result.new_order # 検索結果(何もなければ全件取得)
   end
 
   def new

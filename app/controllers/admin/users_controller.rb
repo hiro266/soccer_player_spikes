@@ -4,7 +4,7 @@ class Admin::UsersController < Admin::BaseController
 
   def index
     @q = User.ransack(params[:q]) # 検索オブジェクト作成
-    @users = @q.result.new_order.page(params[:page]) # 検索結果(何もなければ全件取得)
+    @users = @q.result.new_order # 検索結果(何もなければ全件取得)
   end
 
   def show; end
