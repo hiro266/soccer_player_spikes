@@ -3,7 +3,7 @@
     .d-flex
       .user-show-card-header-left
         | プロフィール編集
-      .current-user-avatar
+      .current-user-avatar.ml-auto
         = image_tag current_user.avatar.to_s, class: 'avatar'
   .card-body
     = form_with model: @user, url: user_path, local: true do |f|
