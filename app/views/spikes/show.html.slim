@@ -8,7 +8,8 @@
           = @spike.name
       .spike-show-card-header-right.ml-auto
         .spike-show-price
-          span = "¥#{@spike.tax_included}"
+          = "¥#{@spike.tax_included}"
+        .spike-show-price-tax.text-right
           | (税込)
   .card-body
     .swiper-container
@@ -29,7 +30,7 @@
     .other-wearing-players
       | ■ このスパイクを履いている選手
       br
-      .spike-show-player-box
-        - @players.each do |player|
+      - @players.each do |player|
+        .spike-show-player-box
           -  if player.player_wearing_this_spike(@spike)
-            = player.name
+            = "・#{player.name}"

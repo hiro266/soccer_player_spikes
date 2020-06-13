@@ -14,15 +14,15 @@
           = current_user.email
         .current-user-avatar
           = image_tag current_user.avatar.to_s, class: 'avatar'
-      .current-user-notification
-        | メール通知
-        br
-        = current_user.notification_i18n
-      .favorite-players
-        | お気に入り選手
-        br
-        | 写真並べる
-      .favorite-spikes
-        | お気に入りスパイク
-        br
-        | 写真並べる
+      / .current-user-notification
+      /   | メール通知
+      /   br
+      /   = current_user.notification_i18n
+      / .favorite-players
+      /   | お気に入り選手
+      /   br
+      /   | 写真並べる
+      / .favorite-spikes
+      /   | お気に入りスパイク
+      /   br
+      /   | 写真並べる

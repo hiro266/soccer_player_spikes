@@ -4,14 +4,17 @@
 @import 'font-awesome';
 @import 'swiper/css/swiper';
 
-$main-color: #4169e1;
+$main-color: #1B5084;
+$sub-color:  #666;
 
 body {
+  color: #666;
   font-family: 'Sawarabi Mincho', sans-serif;
 }
 a {
+  color: $sub-color;
   &:hover {
-    color: #fff;
+    color: #999;
     text-decoration: none;
   }
 }
@@ -23,10 +26,13 @@ a {
 }
 .spike-show-card-header-right {
   align-self: flex-end;
-  span {
-    color: red;
-    font-size: 28px;
-  }
+}
+.spike-show-price {
+  color: red;
+  font-size: 28px;
+}
+.spike-show-price-tax {
+  align-items: flex-end;
 }
 .card-footer-title {
   font-size:18px;
@@ -122,4 +128,14 @@ a {
 }
 .form-control {
   background-image: linear-gradient(to top, $main-color 2px, rgba(0, 150, 136, 0) 2px), linear-gradient(to top, rgba(0, 0, 0, 0.26) 1px, rgba(0, 0, 0, 0) 1px);
+}
+.page-item.active .page-link {
+  background-color: $main-color;
+  border-color: $main-color;
+}
+.page-link {
+  color: $main-color;
+}
+.bg-secondary {
+  background-color: $sub-color !important;
 }
