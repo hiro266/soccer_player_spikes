@@ -1,2 +1,8 @@
-= link_to t('.guest'), guest_login_path, class: 'nav-link'
-= link_to t('.twitter'), auth_at_provider_path(provider: :twitter), class: 'nav-link'
+.login-btn-area.py-5
+  .twitter-login.text-center.py-3
+    = link_to auth_at_provider_path(provider: :twitter), class: 'btn-social-long-twitter' do
+      = icon 'fab', 'twitter'
+      span
+        | ログイン
+  .guest-login.text-center.py-3
+    = link_to 'ゲストログイン', guest_login_path, class: 'btn-guest'
