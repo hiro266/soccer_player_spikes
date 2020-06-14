@@ -6,8 +6,6 @@ class Spike < ApplicationRecord
   has_many :tags, through: :spike_tags
   has_many :ground_tags, through: :spike_tags
   has_many :color_tags, through: :spike_tags
-  # データの送受信のタイミングでjson ⇄ stringへ変換？
-  serialize :images, JSON
 
   validates :maker,
             :name,
