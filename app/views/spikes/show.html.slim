@@ -21,8 +21,11 @@
   .card-footer
     .card-footer-title
       | 商品説明
-    .spike-color
-      = "■カラー：#{@spike.color}"
+    .spike-color-box
+      = '■カラー'
+      - @spike.color_tags.each do |color|
+        .spike-color
+          = "・#{color.name}"
     .spike-characteristic
       | ■特徴
       br
