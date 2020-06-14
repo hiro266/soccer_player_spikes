@@ -14,8 +14,9 @@ class Admin::SpikesController < Admin::BaseController
   def create
     @spike = Spike.new(spike_params)
     @ground_tags = params[:spike][:ground]
+    @color_tags = params[:spike][:color]
     if @spike.save
-      @spike.save_tags_for_spike(@ground_tags)
+      @spike.save_tags_for_spike(@ground_tags, @color_tags)
       redirect_to admin_spikes_url, success: t('.flash.create')
     else
       flash.now[:danger] = t('.flash.not_create')
@@ -24,13 +25,15 @@ class Admin::SpikesController < Admin::BaseController
   end
 
   def edit
-    @ground_tags = @spike.ground_tags.pluck(:ground).join(',')
+    @ground_tags = @spike.ground_tags.pluck(:name).join(',')
+    @color_tags = @spike.color_tags.pluck(:name).join(',')
   end
 
   def update
     @ground_tags = params[:spike][:ground]
+    @color_tags = params[:spike][:color]
     if @spike.update(spike_params)
-      @spike.save_tags_for_spike(@ground_tags)
+      @spike.save_tags_for_spike(@ground_tags, @color_tags)
       redirect_to admin_spike_url(@spike), success: t('.flash.update')
     else
       flash.now[:danger] = t('.flash.not_update')
@@ -53,6 +56,6 @@ class Admin::SpikesController < Admin::BaseController
 
     def spike_params
       params.require(:spike)
-            .permit(:maker, :name, :price, :color, :characteristic, images: [])
+            .permit(:maker, :name, :price, :characteristic, images: [])
     end
 end

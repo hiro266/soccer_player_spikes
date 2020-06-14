@@ -4,7 +4,6 @@ class CreateSpikes < ActiveRecord::Migration[5.2]
       t.integer :maker, null: false
       t.string :name, null: false
       t.integer :price, null: false
-      t.string :color, null: false
       t.text :characteristic, null: false
       t.string :images, null: false
 

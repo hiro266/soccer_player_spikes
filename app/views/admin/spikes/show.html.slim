@@ -26,7 +26,7 @@
             td
               - @spike.ground_tags.each do |t|
                 .card-text.mr-1.badge.badge-fa9b02
-                  = t.ground
+                  = t.name
           tr
             th[scope="row"]
               | メーカー
@@ -46,7 +46,9 @@
             th[scope="row"]
               | 色
             td
-              = @spike.color
+              - @spike.color_tags.each do |t|
+                .card-text.mr-1.badge.badge-fa9b02
+                  = t.name
           tr
             th[scope="row"]
               | 商品説明

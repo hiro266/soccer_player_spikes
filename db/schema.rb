@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_22_093152) do
+ActiveRecord::Schema.define(version: 2020_06_13_222211) do
 
   create_table "authentications", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -20,13 +20,6 @@ ActiveRecord::Schema.define(version: 2020_05_22_093152) do
     t.datetime "updated_at", null: false
     t.index ["provider", "uid"], name: "index_authentications_on_provider_and_uid"
     t.index ["user_id"], name: "index_authentications_on_user_id"
-  end
-
-  create_table "ground_tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "ground"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["ground"], name: "index_ground_tags_on_ground", unique: true
   end
 
   create_table "player_tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -47,20 +40,20 @@ ActiveRecord::Schema.define(version: 2020_05_22_093152) do
     t.index ["spike_id"], name: "index_players_on_spike_id"
   end
 
-  create_table "spike_ground_tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "spike_tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "spike_id", null: false
-    t.bigint "ground_tag_id", null: false
+    t.bigint "tag_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["ground_tag_id"], name: "index_spike_ground_tags_on_ground_tag_id"
-    t.index ["spike_id"], name: "index_spike_ground_tags_on_spike_id"
+    t.index ["spike_id", "tag_id"], name: "index_spike_tags_on_spike_id_and_tag_id", unique: true
+    t.index ["spike_id"], name: "index_spike_tags_on_spike_id"
+    t.index ["tag_id"], name: "index_spike_tags_on_tag_id"
   end
 
   create_table "spikes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "maker", null: false
     t.string "name", null: false
     t.integer "price", null: false
-    t.string "color", null: false
     t.text "characteristic", null: false
     t.string "images", null: false
     t.datetime "created_at", null: false
@@ -91,6 +84,6 @@ ActiveRecord::Schema.define(version: 2020_05_22_093152) do
   add_foreign_key "player_tags", "players"
   add_foreign_key "player_tags", "tags"
   add_foreign_key "players", "spikes"
-  add_foreign_key "spike_ground_tags", "ground_tags"
-  add_foreign_key "spike_ground_tags", "spikes"
+  add_foreign_key "spike_tags", "spikes"
+  add_foreign_key "spike_tags", "tags"
 end
