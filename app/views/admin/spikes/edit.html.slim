@@ -27,7 +27,7 @@
           = f.text_field :price, class: "form-control"
         .form-group
           = f.label :color
-          = f.text_field :color, class: "form-control"
+          = f.text_field :color, value: @color_tags, class: "form-control"
         .form-group
           = f.label :characteristic
           = f.text_area :characteristic, class: "form-control", row: 5
