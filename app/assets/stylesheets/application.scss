@@ -141,3 +141,6 @@ a {
 .bg-secondary {
   background-color: $sub-color !important;
 }
+.bg-maincolor-lighten {
+  background-color: lighten($main-color, 65%)
+}

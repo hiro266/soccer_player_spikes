@@ -9,12 +9,12 @@ html
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
     link[href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap" rel="stylesheet"]
-  body
+  body.bg-maincolor-lighten
     - if current_user
       = render 'shared/header'
     - else
       = render 'shared/before_login_header'
     = render 'shared/flash_message'
-    main.bg-light
-    = yield
+    main
+      = yield
     = render 'shared/footer'
