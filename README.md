@@ -4,7 +4,7 @@
 https://xd.adobe.com/view/911e65b3-308a-483e-6c15-ec51c5edad62-e72f/
 
 ## ER図
-[![Image from Gyazo](https://i.gyazo.com/808d1d8637dadf9b68508075b85fc46b.png)](https://gyazo.com/808d1d8637dadf9b68508075b85fc46b)
+[![Image from Gyazo](https://i.gyazo.com/f6dfccb6e3b120c1e9b00c993f6a6f36.png)](https://gyazo.com/f6dfccb6e3b120c1e9b00c993f6a6f36)
 
 ## サービス概要
 様々なプロサッカー選手のモデルシューズ(スパイク)を一気に知りたい男女に  
