@@ -56,13 +56,13 @@ a {
   padding: 0.25em 0.5em;
   text-decoration: none;
   color: #FFF;
-  background: #fd9535;/*背景色*/
-  border-bottom: solid 2px #d27d00;/*少し濃い目の色に*/
+  background: $main-color;/*背景色*/
+  border-bottom: solid 2px darken($main-color, 15%);/*少し濃い目の色に*/
   border-radius: 4px;/*角の丸み*/
   box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
   font-weight: bold;
   &:active {
-    border-bottom: solid 2px #fd9535;
+    border-bottom: solid 2px $main-color;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
   }
 }
@@ -140,4 +140,46 @@ a {
 }
 .bg-secondary {
   background-color: $sub-color !important;
+}
+.bg-maincolor-lighten {
+  background-color: lighten($main-color, 66%)
+}
+.btn-social-long-twitter {
+  color: #FFF;/*文字・アイコン色*/
+  border-radius: 7px;/*角丸に*/
+  display: inline-block;
+  height: 50px;/*高さ*/
+  width: 190px;/*幅*/
+  text-align: center;/*中身を中央寄せ*/
+  font-size: 25px;/*文字のサイズ*/
+  line-height: 50px;/*高さと合わせる*/
+  background: #1da1f3;
+  overflow: hidden;/*はみ出た部分を隠す*/
+  text-decoration:none;/*下線は消す*/
+  &:hover {
+    color: #fff;
+  }
+}
+.btn-social-long-twitter .fa-twitter {
+  text-shadow: 2px 2px 0px #4287d6;
+  font-size: 30px;
+}
+.btn-social-long-twitter span {
+  display:inline-block;
+}
+.btn-guest {
+  color: #FFF;/*文字・アイコン色*/
+  border-radius: 7px;/*角丸に*/
+  display: inline-block;
+  height: 50px;/*高さ*/
+  width: 190px;/*幅*/
+  text-align: center;/*中身を中央寄せ*/
+  font-size: 25px;/*文字のサイズ*/
+  line-height: 50px;/*高さと合わせる*/
+  background: $main-color;
+  overflow: hidden;/*はみ出た部分を隠す*/
+  text-decoration:none;/*下線は消す*/
+  &:hover {
+    color: #fff;
+  }
 }

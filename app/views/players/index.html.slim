@@ -7,16 +7,22 @@
     | バロンドール候補
 .container
   = render 'search_form', url: root_path, q: @q
-.players-area
-  .container(class = "#{'show' if params[:page] == nil}")
-    .row
-      = render partial: 'player', collection: @all_japan_players, as: 'player'
-    = paginate @all_japan_players, param_name: :all_japan, params: { page: nil }
-  .container(class = "#{'show' if params[:page] == 'olympic_page'}")
-    .row
-      = render partial: 'player', collection: @olympic_japan_players, as: 'player'
-    = paginate @olympic_japan_players, param_name: :olympic_japan, params: { page: 'olympic_page' }
-  .container(class = "#{'show' if params[:page] == 'baron_d_or_page'}")
-    .row
-      = render partial: 'player', collection: @baron_d_or_players, as: 'player'
-    = paginate @baron_d_or_players, param_name: :baron_d_or, params: { page: 'baron_d_or_page' }
+- if @all_japan_players.present? || @olympic_japan_players.present? || @baron_d_or_players.present?
+  .players-area
+    .container(class = "#{'show' if params[:page] == nil}")
+      .row
+        = render partial: 'player', collection: @all_japan_players, as: 'player'
+      = paginate @all_japan_players, param_name: :all_japan, params: { page: nil }
+    .container(class = "#{'show' if params[:page] == 'olympic_page'}")
+      .row
+        = render partial: 'player', collection: @olympic_japan_players, as: 'player'
+      = paginate @olympic_japan_players, param_name: :olympic_japan, params: { page: 'olympic_page' }
+    .container(class = "#{'show' if params[:page] == 'baron_d_or_page'}")
+      .row
+        = render partial: 'player', collection: @baron_d_or_players, as: 'player'
+      = paginate @baron_d_or_players, param_name: :baron_d_or, params: { page: 'baron_d_or_page' }
+- else
+  .container
+    .card-header.py-5
+      h5
+        | 該当プレイヤーがいません。

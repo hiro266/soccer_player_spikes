@@ -13,8 +13,8 @@
       .form-group
         = f.label :email
         = f.text_field :email, class: "form-control", disabled: true
-      .form-group
-          = f.label :notification
-          = f.select :notification, User.notifications.keys.map { |k| [I18n.t("enums.user.notification.#{k}"), k] }, {}, {class:"form-control"}
+      / .form-group
+      /     = f.label :notification
+      /     = f.select :notification, User.notifications.keys.map { |k| [I18n.t("enums.user.notification.#{k}"), k] }, {}, {class:"form-control"}
       .action.mt-3
-          = f.submit class: "btn btn-primary"
+          = f.submit class: "btn btn-main-color"
