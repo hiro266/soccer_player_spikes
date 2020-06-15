@@ -5,7 +5,7 @@ class CreateSpikes < ActiveRecord::Migration[5.2]
       t.string :name, null: false
       t.integer :price, null: false
       t.text :characteristic, null: false
-      t.json :images, null: false
+      t.string :images, null: false
 
       t.timestamps
     end
