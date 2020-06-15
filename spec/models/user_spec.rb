@@ -26,13 +26,13 @@ RSpec.describe "Model#{User}", type: :model do
       it 'twitter_idが未入力のuserは登録できない' do
         user = build(:user, :twitter, twitter_id: nil)
         expect(user.valid?).to be false
-        expect(user.errors.full_messages).to include("Twitter IDを入力してください")
+        expect(user.errors[:twitter_id]).to include("を入力してください")
       end
   
       it '名前が未入力のuserは登録できない' do
         user = build(:user, :twitter, screen_name: nil)
         expect(user.valid?).to be false
-        expect(user.errors.full_messages).to include("名前を入力してください")
+        expect(user.errors[:screen_name]).to include("を入力してください")
       end
     end
 
