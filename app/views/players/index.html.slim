@@ -10,7 +10,7 @@
 - if @all_japan_players.present? || @olympic_japan_players.present? || @baron_d_or_players.present?
   .players-area
     .container(class = "#{'show' if params[:page] == nil}")
-      .row
+      .row.card-adjustment
         = render partial: 'player', collection: @all_japan_players, as: 'player'
       = paginate @all_japan_players, param_name: :all_japan, params: { page: nil }
     .container(class = "#{'show' if params[:page] == 'olympic_page'}")

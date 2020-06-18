@@ -183,3 +183,11 @@ a {
     color: #fff;
   }
 }
+.card-adjustment{
+  .col-lg-4 {
+    margin: 1%;
+    padding: 0;
+    flex: 0 0 31%;
+    max-width: 31%;
+  }
+}
