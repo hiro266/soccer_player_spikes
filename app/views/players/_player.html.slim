@@ -1,4 +1,4 @@
-.card.col-sm-12.col-lg-4.my-2
+.card.col-sm-12.col-md-4.my-2
   .card-header
     .d-flex
       .card-header-left
@@ -34,4 +34,6 @@
       .spike-price
         | ■メーカー希望小売価格
         br
-        = "¥#{player.spike.tax_included}(税込)"
+        = number_to_currency(player.spike.tax_included)
+        span
+          | (税込)
