@@ -1,26 +1,26 @@
 .tab.clearfix
-  li(class = "#{'active' if params[:page] == nil}")
+  li(class = "#{'active' if params[:player_type] == nil}")
     | 日本代表
-  li(class = "#{'active' if params[:page] == 'olympic_page'}")
+  li(class = "#{'active' if params[:player_type] == 'olympic_japan'}")
     | 五輪候補
-  li(class = "#{'active' if params[:page] == 'baron_d_or_page'}")
+  li(class = "#{'active' if params[:player_type] == 'baron_d_or'}")
     | バロンドール候補
 .container
   = render 'search_form', url: root_path, q: @q
 - if @all_japan_players.present? || @olympic_japan_players.present? || @baron_d_or_players.present?
   .players-area
-    .container(class = "#{'show' if params[:page] == nil}")
+    .container(class = "#{'show' if params[:player_type] == nil}")
       .row.card-adjustment
         = render partial: 'player', collection: @all_japan_players, as: 'player'
-      = paginate @all_japan_players, param_name: :all_japan, params: { page: nil }
-    .container(class = "#{'show' if params[:page] == 'olympic_page'}")
-      .row
+      = paginate @all_japan_players, param_name: :all_japan_page, params: { player_type: nil }
+    .container(class = "#{'show' if params[:player_type] == 'olympic_japan'}")
+      .row.card-adjustment
         = render partial: 'player', collection: @olympic_japan_players, as: 'player'
-      = paginate @olympic_japan_players, param_name: :olympic_japan, params: { page: 'olympic_page' }
-    .container(class = "#{'show' if params[:page] == 'baron_d_or_page'}")
-      .row
+      = paginate @olympic_japan_players, param_name: :olympic_japan_page, params: { player_type: 'olympic_japan' }
+    .container(class = "#{'show' if params[:player_type] == 'baron_d_or'}")
+      .row.card-adjustment
         = render partial: 'player', collection: @baron_d_or_players, as: 'player'
-      = paginate @baron_d_or_players, param_name: :baron_d_or, params: { page: 'baron_d_or_page' }
+      = paginate @baron_d_or_players, param_name: :baron_d_or_page, params: { player_type: 'baron_d_or' }
 - else
   .container
     .card-header.py-5
