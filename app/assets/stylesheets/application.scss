@@ -24,15 +24,20 @@ a {
 .card-footer {
   font-size: 18px;
 }
+.spike-show-card-header-left {
+  width: 60%;
+}
 .spike-show-card-header-right {
+  width: 40%;
   align-self: flex-end;
+  text-align: end;
 }
 .spike-show-price {
   color: red;
-  font-size: 28px;
+  font-size: 26px;
 }
 .spike-show-price-tax {
-  align-items: flex-end;
+  text-align: end;
 }
 .card-footer-title {
   font-size:18px;
@@ -184,10 +189,12 @@ a {
   }
 }
 .card-adjustment{
-  .col-lg-4 {
-    margin: 1%;
-    padding: 0;
-    flex: 0 0 31%;
-    max-width: 31%;
+  @media screen and (min-width: 768px) {
+    .col-md-4 {
+      margin: 1%;
+      padding: 0;
+      flex: 0 0 31%;
+      max-width: 31%;
+    }
   }
 }
