@@ -15,7 +15,7 @@ class Spike < ApplicationRecord
             :characteristic,
             :images,
             presence: true
-  enum maker: { アディダス: 0, ナイキ: 1, プーマ: 2, ミズノ: 3, アシックス: 4, ニューバランス: 5, アンブロ: 6 }
+  enum maker: { アディダス: 0, ナイキ: 1, プーマ: 2, ミズノ: 3, アシックス: 4, ニューバランス: 5, アンブロ: 6, 準備中: 100 }
 
   def save_tags_for_spike(ground_tag_names, color_tag_names)
     self.ground_tags = ground_tag_names.split(',').map { |name| GroundTag.find_or_create_by(name: name) }

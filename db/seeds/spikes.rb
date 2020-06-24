@@ -170,3 +170,13 @@ spike = Spike.new(
   ]
 )
 spike.save_tags_for_spike('','ホワイト×ゴールド,ライトブルー×ホワイト,レッド×ブラック,イエロー×ネイビー') if spike.save
+
+spike = Spike.new(
+  maker: '準備中',
+  name: '準備中',
+  price: 0,
+  characteristic: '準備中',
+  images: [Rails.root.join("db/fixtures/準備中.png").open
+  ]
+)
+spike.save
