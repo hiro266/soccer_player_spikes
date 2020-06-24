@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resource :user, only: %i[show edit update]
   namespace :admin do
     root 'dashboards#index'
-    resources :users, only: %i{index show edit update destroy}
+    resources :users, only: %i[index show edit update destroy]
     resources :spikes
     resources :players
   end
