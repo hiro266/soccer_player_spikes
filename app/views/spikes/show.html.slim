@@ -8,8 +8,8 @@
           = @spike.name
       .spike-show-card-header-right.ml-auto
         .spike-show-price
-          = "¥#{@spike.tax_included}"
-        .spike-show-price-tax.text-right
+          = number_to_currency(@spike.tax_included)
+        .spike-show-price-tax
           | (税込)
   .card-body
     .swiper-container
